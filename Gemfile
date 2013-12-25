@@ -4,7 +4,10 @@ gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
+group :production, :test do
+    ruby '1.9.3'
+    gem 'rails_12factor'
+end
 group :development, :test do
   gem 'pg'
 end
