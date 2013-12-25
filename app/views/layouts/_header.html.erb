@@ -1,0 +1,46 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+      <%= link_to "MY Yoga", root_path, id: "logo" %>
+      <nav>
+        <ul class="nav pull-right">
+          <li><%= link_to "Users", '/users' %></li>
+          <li><%= link_to "Home", '/Index' %></li>
+          <li><%= link_to "About Us", '/AboutUs' %></li> 
+
+          <% if session[:UserEmail] %>
+            <li id="fat-menu" class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                Account <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Profile", '/Profile' %></li>
+                <li><%= link_to "Settings", '/Settings' %></li>
+                <li class="divider"></li>
+                <li><%= link_to "Sign out", '/SignOut' %></li>
+              </ul>
+            </li>
+            <li>
+              <div class="btn-group open">
+                <a class="btn btn-primary" href="#"><i class="fa fa-user fa-fw"></i> User</a>
+                <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
+                  <span class="fa fa-caret-down"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#"><i class="fa fa-pencil fa-fw"></i> Edit</a></li>
+                  <li><a href="#"><i class="fa fa-trash-o fa-fw"></i> Delete</a></li>
+                  <li><a href="#"><i class="fa fa-ban fa-fw"></i> Ban</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#"><i class="i"></i> Make admin</a></li>
+                </ul>
+              </div>
+            </li>
+          <% else %>
+            <li><%= link_to "Sign Up", '/SignUp' %></li>
+            <li><%= link_to "Sign In", '/SignIn' %></li>
+          <% end %>
+        </ul>
+      </nav>
+
+    </div>
+  </div>
+</header>

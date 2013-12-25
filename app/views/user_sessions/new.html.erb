@@ -1,0 +1,22 @@
+<h1>Sign in</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <form accept-charset="UTF-8" action="/user_sessions" method="post">
+      <div>
+        <label for="user_session_email">Email</label>
+        <input id="user_session_email" name="user_session[email]" size="30" type="text" />
+      </div>
+      <div>
+        <label for="user_session_password">Password</label>
+        <input id="user_session_password" name="user_session[password]" size="30"
+               type="password" />
+      </div>
+      <br/>
+      <input class="btn btn-large btn-primary" name="commit" type="submit"
+             value="Sign in" />
+    </form>
+
+    <p>New user? <%= link_to "Sign up now!", '/SignUp' %></p>
+  </div>
+</div>
